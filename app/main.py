@@ -108,7 +108,8 @@ class CarWashStation:
         return price
 
     def wash_single_car(self, car: Car) -> None:
-        car.car_washed(self.clean_power)
+        if car.clean_mark < self.clean_power:
+            car.car_washed(self.clean_power)
 
     def rate_service(self, value: float) -> None:
         if 0.0 <= value <= 5.0:
