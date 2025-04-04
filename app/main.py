@@ -89,7 +89,7 @@ class CarWashStation:
         else:
             self._distance_from_city_center = value
 
-    def м(self, cars_ls: list[Car]) -> float:
+    def serve_cars(self, cars_ls: list[Car]) -> float:
         income = 0
 
         for car in cars_ls:
@@ -108,8 +108,7 @@ class CarWashStation:
         return price
 
     def wash_single_car(self, car: Car) -> None:
-        if car.clean_mark < self.clean_power:
-            car.car_washed(self.clean_power)
+        car.car_washed(self.clean_power)
 
     def rate_service(self, value: float) -> None:
         if 0.0 <= value <= 5.0:
